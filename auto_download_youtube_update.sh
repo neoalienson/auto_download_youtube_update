@@ -2,6 +2,7 @@
 
 # options for youtube-dl, e.g., --proxy
 OPTS='--max-downloads 10'
+YOUTUBE_DL=/usr/local/bin/youtube-dl
 
 declare -A URLS
 
@@ -16,6 +17,6 @@ do
   echo $KEY
   mkdir -p $KEY
   cd $KEY
-  youtube-dl $OPTS ${URLS[$KEY]}
+  $YOUTUBE_DL $OPTS ${URLS[$KEY]}
   cd ..
 done
